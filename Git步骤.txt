@@ -1,0 +1,23 @@
+1、安装git
+2、新建项目路径（文件夹）
+3、git初始化：git init 
+3、配置用户名和邮箱：
+     git config --global user.name "username"
+     git config --global user.email "email" 
+4、查看是否配置成功：git config --global --list
+
+5、git本地操作：
+1） 往项目路径添加文件
+2）git status 查看git状态，
+3）git add 文件名，git add . （提交所有有修改的文件） 将工作区修改提交到暂存区；
+4）git commit -m  "提交日志" 将暂存区修改提交到本地仓库；
+
+6、git远程仓库操作：
+1）在github上登录自己的账号，新建一个repository
+2）给本地仓库添加远程仓库： git remote add origin git@github.com:18072741958/learn0910.git
+origin为远程仓库代号，可以自定义；git@github.com:18072741958/learn0910.git 为github页面上ssh方式，在本地仓库路径下执行
+3) 把本地仓库文件推送至远程：1、先配置公钥和私钥：ssh-keygen -t rsa -C "960302109@qq.com"（本地生成公钥和私钥），生成后根据提示路径拿到公钥，到gitHub页面上用户->settings->SSH and GPH keys ->New SSH key,填入公钥
+
+https方式，每次提交都要输入密码，推荐使用ssh方式，配置一次公私钥就行；
+4）检验是否配置成功：ssh -T git@github.com
+5） 提交代码到远程仓库：git push -u origin master
